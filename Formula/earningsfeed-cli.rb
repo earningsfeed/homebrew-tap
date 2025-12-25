@@ -1,36 +1,36 @@
 class EarningsfeedCli < Formula
   desc "CLI for the EarningsFeed API - SEC filings, insider transactions, and institutional holdings"
   homepage "https://earningsfeed.com"
-  version "0.1.0"
+  version "0.1.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.0/earningsfeed-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "d92e5805d1cac70455eaa68206de557a79e3b57a120139631f61723ac4395647"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.5/earningsfeed-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "b0a1fb7d295c8dadd11afcedf6ef5d85d9db69b792acb875a6b131603dd688a6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.0/earningsfeed-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "bc2a9d94667b0f6494a135ed101e523726380b68539be32dc22811d0f76fcd45"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.5/earningsfeed-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "b0d8dce25587f93e0785164c73c3a31dc9b9f5107400b2224272ad796cafbc5e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.0/earningsfeed-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "351d0abedc7f42ee354f6686a89d87177f7023bd503beaa6ebc61944dcef3cc3"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.5/earningsfeed-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "cd802245311b024f4c71b4242c420990b8ba0a5a9f6eb0bb524d6600dd5ddce8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.0/earningsfeed-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9a07e712766ed4de58edacef7f718d07995f5c9d8a23d58755955002771d26f4"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.5/earningsfeed-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "52c65533dfd6d5a807ebb43bcad0b290507e8f3fd81e079a8e0d853503cf1041"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,18 +48,10 @@ class EarningsfeedCli < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "earningsfeed"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "earningsfeed"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "earningsfeed"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "earningsfeed"
-    end
+    bin.install "earningsfeed" if OS.mac? && Hardware::CPU.arm?
+    bin.install "earningsfeed" if OS.mac? && Hardware::CPU.intel?
+    bin.install "earningsfeed" if OS.linux? && Hardware::CPU.arm?
+    bin.install "earningsfeed" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
