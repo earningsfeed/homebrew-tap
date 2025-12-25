@@ -1,25 +1,25 @@
 class EarningsfeedCli < Formula
   desc "CLI for the EarningsFeed API - SEC filings, insider transactions, and institutional holdings"
   homepage "https://earningsfeed.com"
-  version "0.1.8"
+  version "0.1.9"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.8/earningsfeed-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "4065573d081617665479673fc7377ee45cf7bf745d21639da2dd104cf7c2c811"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.9/earningsfeed-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "f1d1df932c1523dac860fe08c24a81d4c2fb3586c4e4b0ebdb035d6618a2c6b4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.8/earningsfeed-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "ebd86cc852649470aeab2927705fcbfcba023d4c32314b9d52b554999c56f8d8"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.9/earningsfeed-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "ef9520c5b9b1bcecf4f593fbc0325136624a959c4c9f9e622f45338071e8a5b3"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.8/earningsfeed-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "7528b25b4430588534caff8ebb91791d0ea9df0fed3bfb4d51d8f3a58f2c2229"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.9/earningsfeed-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "1ac0c3355a2aac33c4d2bd64e3271fb31057d0b4a393127aaaf174cb2221ee64"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.8/earningsfeed-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9abd20a53d06e4deae44715f4d18514192294522bfa7f40c852f4f60ef27ffc4"
+      url "https://github.com/earningsfeed/earningsfeed-cli/releases/download/v0.1.9/earningsfeed-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "71a8bc141096004e28a534b409ab4f176712d7230f0987f386d82458d7152ae8"
     end
   end
   license "MIT"
